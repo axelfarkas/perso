@@ -1,0 +1,24 @@
+#auth{
+	width: 800px;
+	margin: auto;
+}
+#auth input[type=text],
+#auth input[type=password]{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#auth label,
+#auth input[type=submit]{
+	display: block;
+}
+#auth input[type=submit]{
+	margin-top: 15px;
+	float: right;
+}
+#auth .row > div{
+	float: left;
+	width: 49%;
+}
+#auth .row > div:first-child{ margin-right: 1%; }
+#auth .row > div:last-child{ margin-left: 1%; }
