@@ -37,5 +37,13 @@ function encrypt($str){
 	return $str;
 }
 
+if($action == 'updatePromotions'){
+	
+	$promos = json_encode((object)$_POST['promo']);
+	$promos = file_put_contents('../../datas/promotions_'.date('Y_m_d_H_i_s').'.json', $promos);
+	header('Location:/admin');
+	
+}
+
 
 ?>

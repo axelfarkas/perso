@@ -1,22 +1,26 @@
 <?php 
-$layout = file_get_contents('layout.php');
+ob_start();
+include 'layout.php';
+$layout = ob_get_clean();
+
+$dir = glob($_SERVER['DOCUMENT_ROOT'].'/datas/promotions*');
+$promotions = json_decode(file_get_contents(array_pop($dir)));
+
 ob_start();
 ?>
 
 <section>
 	<article class="bg-red clearfix">
 		<div class="imgWrapper">
-			<img src="http://fakeimg.pl/200x200/00CED1/FFF/?text=img+placeholder">
+			<img src="<?=$promotions->{0}->photo?>">
 		</div>
 		<h3>Promotion</h3>
 		<p>
-			Bannanes planteur <br>
-			origine guadeloupe <br>
-			appelation contrôlée
+			<?=nl2br($promotions->{0}->description)?>
 		</p>
 		<ul>
-			<li>Prix unitaire: 1,3€</li>
-			<li>Prix au Kg: 6€</li>
+			<li>Prix unitaire: <?=$promotions->{0}->unitaire?>€</li>
+			<li>Prix au Kg: <?=$promotions->{0}->kg?>€</li>
 		</ul>
 	</article>
 
@@ -88,17 +92,15 @@ ob_start();
 <section>
 	<article class="bg-red clearfix">
 		<div class="imgWrapper">
-			<img src="http://fakeimg.pl/200x200/00CED1/FFF/?text=img+placeholder">
+			<img src="<?=$promotions->{1}->photo?>">
 		</div>
 		<h3>Promotion</h3>
 		<p>
-			Bannanes planteur <br>
-			origine guadeloupe <br>
-			appelation contrôlée
+			<?=nl2br($promotions->{1}->description)?>
 		</p>
 		<ul>
-			<li>Prix unitaire: 1,3€</li>
-			<li>Prix au Kg: 6€</li>
+			<li>Prix unitaire: <?=$promotions->{1}->unitaire?>€</li>
+			<li>Prix au Kg: <?=$promotions->{1}->kg?>€</li>
 		</ul>
 	</article>
 

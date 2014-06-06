@@ -16,7 +16,7 @@
 
 	<header id="header">
 		<h1>
-			<a href="http://<?=$_SERVER['HTTP_HOST']?>/dia">
+			<a href="http://<?=$_SERVER['HTTP_HOST']?>">
 				<img src="/img/logo.png" alt="Dia Troyes" width="150">
 			</a>
 		</h1>

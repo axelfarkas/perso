@@ -5,7 +5,7 @@ $user = !empty($_SESSION['user']) ? $_SESSION['user'] : null;
 
 $passwords = json_decode(file_get_contents('.passwords.json'));
 
-$layout = file_get_contents('../layout.php');
+$layout = inc('../layout.php');
 
 if(!empty($user)){
 
